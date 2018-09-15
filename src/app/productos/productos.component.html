@@ -1,0 +1,16 @@
+
+  <div class="container">
+    <div class="row productos-list">
+      <div class="col-sm-4" *ngFor="let producto of productos;">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{producto.nombre}}</h5>
+            <p class="card-text">{{producto.descripcion}}</p>
+            <!-- <button (click)="verProducto(producto.id)" type="button" name="button" class="btn btn-outline-primary btn-block">Ver
+              más...</button> -->
+              <button [routerLink]="['/productos', producto.id]" name="button" class="btn btn-outline-primary btn-block">Ver más</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
