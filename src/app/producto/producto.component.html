@@ -10,11 +10,13 @@
       <div class="col-sm-6">
         <h2>Nombre: {{producto.nombre}} </h2>
         <p>Fecha: {{producto.descripcion}}</p>
+        <h3>Precio: {{producto.precio}}</h3>
       </div>
       <div class="col-sm-6">
-        <img src="{{producto.imagen}}" class="img-fluid">
+        <img src="{{producto.imagen}}" class="img-fluid rounded">
       </div>
     </div>
+    <button [routerLink]="['/productos']" name="button" class="btn btn-primary">Volver a productos</button>
   </div>
 </div>
 </div>

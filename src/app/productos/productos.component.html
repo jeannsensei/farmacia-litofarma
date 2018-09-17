@@ -1,4 +1,6 @@
 
+  <div class="text-center productos-list"><h1>Productos disponibles</h1></div>
+  
   <div class="container">
     <div class="row productos-list">
       <div class="col-sm-4" *ngFor="let producto of productos;">
@@ -6,9 +8,11 @@
           <div class="card-body">
             <h5 class="card-title">{{producto.nombre}}</h5>
             <p class="card-text">{{producto.descripcion}}</p>
+            <img src="{{producto.imagen}}" class="img-fluid img-thumbnail rounded">
+            <p class="text-center">Precio: {{producto.precio}}</p>
             <!-- <button (click)="verProducto(producto.id)" type="button" name="button" class="btn btn-outline-primary btn-block">Ver
               más...</button> -->
-              <button [routerLink]="['/productos', producto.id]" name="button" class="btn btn-outline-primary btn-block">Ver más</button>
+              <button [routerLink]="['/productos', producto.id]" name="button" class="btn btn-outline-primary btn-block">Ver el producto</button>
           </div>
         </div>
       </div>
