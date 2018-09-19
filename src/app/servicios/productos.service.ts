@@ -32,7 +32,7 @@ export class ProductoService {
       })));
   }
 
-  getProducto(id): Observable<{}> {
+  public getProducto(id: string): Observable<{}> {
     // return this.productos;
     return this.afs
       .collection('productos')
@@ -40,24 +40,24 @@ export class ProductoService {
       .valueChanges();
   }
 
-  getObjectById(id) {
-    return this.afs
-      .collection('productos')
-      .doc(id)
-      .valueChanges();
-  }
+  // getObjectById(id) {
+  //   return this.afs
+  //     .collection('productos')
+  //     .doc(id)
+  //     .valueChanges();
+  // }
 
-  addProducto(producto: ProductoInterface) {
+  addProducto(producto: ProductoInterface): void {
     console.log('NEW PRODUCT');
     this.productosCollection.add(producto);
   }
 
-  deleteProducto(producto: ProductoInterface) {
+  deleteProducto(producto: ProductoInterface): void {
     //  console.log('DELETE PRODUCT');
     this.productoDoc = this.afs.doc(`productos/${producto.id}`);
     this.productoDoc.delete();
   }
-  updateProducto(producto: ProductoInterface) {
+  updateProducto(producto: ProductoInterface): void {
     //  console.log('UPDATE PRODUCT');
     this.productoDoc = this.afs.doc(`productos/${producto.id}`);
     this.productoDoc.update(producto);

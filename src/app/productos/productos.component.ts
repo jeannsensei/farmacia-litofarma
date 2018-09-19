@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+// import * as $ from 'jquery';
+
 
 import {
   AngularFirestore
 } from 'angularfire2/firestore';
 import { ProductoInterface } from '../models/ProductoInterface';
 import { ProductoService } from '../servicios/productos.service';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireModule } from 'angularfire2';
+import { CarroDeComprasService } from '../servicios/carro-de-compras.service';
+
 
 @Component({
   selector: 'app-productos',
@@ -16,19 +18,36 @@ import { AngularFireModule } from 'angularfire2';
 })
 export class ProductosComponent implements OnInit {
   productos: ProductoInterface[];
+  element: any = 0;
 
   constructor(
-    private _productoService: ProductoService,
+    private productoService: ProductoService,
     private router: Router,
-    public afs: AngularFirestore
-  ) {}
+    public afs: AngularFirestore,
+    public carroDeComprasService: CarroDeComprasService,
+  ) {
+  }
 
   ngOnInit() {
-    this._productoService.getProductos().subscribe(productos => {
+    this.listaProductos();
+    // localstorage
+  }
+
+
+  listaProductos() {
+    this.productoService.getProductos().subscribe(productos => {
       this.productos = productos;
-      // console.log(productos);
+      // console.log(productos.length);
+      // console.log(productos[1]);
+      // console.log(productos[0]);
+      // console.log(productos[0].nombre);
     });
   }
+
+  // agarrando el id del producto
+
+
+
 
   // verProductoEnConsola() {
   //   console.log(this.productos);

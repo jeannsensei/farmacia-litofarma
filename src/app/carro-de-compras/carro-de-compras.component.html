@@ -1,22 +1,22 @@
-<!-- <div style="background-color:white" class=" contenedorBlog">
+<body>
+    <div class="container mx-auto text-center">
+        <h1>Cosas en el LocalStorage</h1>
+    </div>
 
-
-
-</div> -->
-<div class="producto">
     <div class="container">
         <div class="jumbotron">
             <div class="row">
                 <div class="col-sm-6">
-                    <h2>Nombre: {{producto.nombre}} </h2>
-                    <p>Fecha: {{producto.descripcion}}</p>
-                    <h3>Precio: {{producto.precio}}</h3>
+                    <h1>{{producto_nombre}}</h1>
+                    <h2>{{producto_descripcion}}</h2>
                 </div>
                 <div class="col-sm-6">
-                    <img src="{{producto.imagen}}" class="img-fluid rounded">
+                    <img src="{{producto_imagen}}" class="img-fluid rounded">
+
                 </div>
             </div>
             <button [routerLink]="['/productos']" name="button" class="btn btn-primary">Volver a productos</button>
+
         </div>
     </div>
-</div>
+</body>

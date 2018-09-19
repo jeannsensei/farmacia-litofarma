@@ -9,8 +9,4 @@ export class NavbarComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  recargaComponente() {
-    location.reload();
-  }
 }

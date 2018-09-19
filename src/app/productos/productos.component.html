@@ -1,20 +1,25 @@
+<div class="text-center">
+    <h1>Productos disponibles</h1>
+</div>
 
-  <div class="text-center productos-list"><h1>Productos disponibles</h1></div>
-  
-  <div class="container">
+<div class="container">
     <div class="row productos-list">
-      <div class="col-sm-4" *ngFor="let producto of productos;">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{producto.nombre}}</h5>
-            <p class="card-text">{{producto.descripcion}}</p>
-            <img src="{{producto.imagen}}" class="img-fluid img-thumbnail rounded">
-            <p class="text-center">Precio: {{producto.precio}}</p>
-            <!-- <button (click)="verProducto(producto.id)" type="button" name="button" class="btn btn-outline-primary btn-block">Ver
+        <div class="col-sm-4" *ngFor="let producto of productos;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <p><span id="producto_nombre">{{producto.nombre}}</span></p>
+                    </h5>
+                    <p class="card-text" id="producto_descripcion">{{producto.descripcion}}</p>
+                    <img src="{{producto.imagen}}" class="img-fluid img-thumbnail rounded" id="producto_imagen">
+                    <p class="text-center" id="producto_precio">Precio: {{producto.precio}}</p>
+                    <!-- <button (click)="verProducto(producto.id)" type="button" name="button" class="btn btn-outline-primary btn-block">Ver
               más...</button> -->
-              <button [routerLink]="['/productos', producto.id]" name="button" class="btn btn-outline-primary btn-block">Ver el producto</button>
-          </div>
+                    <button [routerLink]="['/productos', producto.id]" name="button" class="btn btn-outline-primary btn-block">Ver el producto</button>
+
+                    <button (click)="carroDeComprasService.agregarAlCarrito(producto.id)" name="button" class="btn btn-outline-primary btn-block"><pre>{{producto.id}}</pre></button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>

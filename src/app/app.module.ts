@@ -13,6 +13,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { environment } from '../environments/environment';
 import { ProductoService } from './servicios/productos.service';
 import { ProductoComponent } from './producto/producto.component';
+import { CarroDeComprasComponent } from './carro-de-compras/carro-de-compras.component';
+import { CarroDeComprasService } from './servicios/carro-de-compras.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { ProductoComponent } from './producto/producto.component';
     HeaderComponent,
     HomeComponent,
     NavbarComponent,
-    ProductoComponent
+    ProductoComponent,
+    CarroDeComprasComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { ProductoComponent } from './producto/producto.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
   ],
-  providers: [ProductoService],
+  providers: [ProductoService, CarroDeComprasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
